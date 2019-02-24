@@ -5,6 +5,8 @@
  */
 package paymentapp;
 
+import java.util.Scanner;
+
 /**
  *
  * @author nicho
@@ -13,7 +15,13 @@ public class SecureTransaction implements Transaction{
 
     @Override
     public void makeTransaction(String username, String passwrd, double amount, String destination) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(amount + " is to be transfered to " + destination + "\nPlease re-enter your password to continue: ");
+        Scanner scanner = new Scanner(System.in);
+        if(scanner.nextLine().equals(passwrd)){
+            System.out.println("Transfer Successful!");
+        } else {
+            System.out.println("Transfer Failed!");
+        }
     }
     
 }

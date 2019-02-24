@@ -13,7 +13,7 @@ public class InsecureTransaction implements Transaction{
 
     @Override
     public void makeTransaction(String username, String passwrd, double amount, String destination) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("Your username " + username + " and password " + passwrd + " have been broadcast publicly.");
     }
     
 }
