@@ -12,14 +12,14 @@ import com.google.inject.Inject;
  * @author nicho
  */
 public class PaymentService {
-    private Transaction transactionType;
+    private Transaction transaction;
     
     @Inject
-    public PaymentService(Transaction transactionType){
-        this.transactionType = transactionType;
+    public PaymentService(Transaction transaction){
+        this.transaction = transaction;
     }
     
     public void makePayment(final String username, final String passwrd, final double amount, final String destination){
-        
+        transaction.makeTransaction(username, passwrd, amount, destination);
     }
 }

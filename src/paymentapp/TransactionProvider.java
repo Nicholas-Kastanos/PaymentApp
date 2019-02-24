@@ -13,7 +13,7 @@ import com.google.inject.Provider;
  */
 public class TransactionProvider implements Provider<Transaction>{
     
-    private static TransactionType type = TransactionType.INSECURE;
+    private static TransactionType type = TransactionType.SECURE;
     
     @Override
     public Transaction get() {
