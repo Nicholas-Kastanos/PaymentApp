@@ -5,6 +5,8 @@
  */
 package paymentapp;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author nicho
@@ -13,7 +15,7 @@ public class InsecureTransaction implements Transaction{
 
     @Override
     public void makeTransaction(String username, String passwrd, double amount, String destination) {
-        System.out.println("Your username " + username + " and password " + passwrd + " have been broadcast publicly.");
+        JOptionPane.showMessageDialog(null, "Your username " + username + " and password " + passwrd + " have been broadcast publicly.");
     }
     
 }

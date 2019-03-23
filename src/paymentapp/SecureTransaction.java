@@ -5,7 +5,7 @@
  */
 package paymentapp;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,12 +15,11 @@ public class SecureTransaction implements Transaction{
 
     @Override
     public void makeTransaction(String username, String passwrd, double amount, String destination) {
-        System.out.println(amount + " is to be transfered to " + destination + "\nPlease re-enter your password to continue: ");
-        Scanner scanner = new Scanner(System.in);
-        if(scanner.nextLine().equals(passwrd)){
-            System.out.println("Transfer Successful!");
+        String check = JOptionPane.showInputDialog(amount + " is to be transfered to " + destination + "\nPlease re-enter your password to continue: ");
+        if(check.equals(passwrd)){
+            JOptionPane.showMessageDialog(null, "Transfer Successful!");
         } else {
-            System.out.println("Transfer Failed!");
+            JOptionPane.showMessageDialog(null, "Transfer Successful!","Error",JOptionPane.ERROR_MESSAGE);
         }
     }
     
