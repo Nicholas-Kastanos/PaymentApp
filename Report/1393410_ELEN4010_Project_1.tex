@@ -142,14 +142,28 @@ Provider Injections are also essential due to the ability to inject large amount
 
 The remaining features, Field and Optional Injection, Named Linkings and Chained Dependencies, can be classified as Supplementary Features. Field Injection can be implemented using Constructor or Method injection by passing a dependency into the objects as a parameter, and setting it to a private member. Optional Injections removes the need for a default injected object, which reduces the complexity of the code. Chained Dependencies can be complicated to program and test without the support of the framework. This may result in longer development times or lower product quality.
 
-\section{Practical Implementation using Guice}
+\section{Practical Implementation using Guice}\label{sec:guice}
 
 In order to explore the features and usability of DI Frameworks, a sample Java program has been developed using Google's Guice framework (see Appendix~\ref{app:code}). % INSERT GIT REPO HERE
-The sample program emulates how different payment modules can be integrated into a payment or credit transaction system. The user is presented with a login screen, where a username and password is accepted. Once the user has logged in, the user is placed into a loop where they can repeatedly make transactions until the logout. 
+The sample program emulates how different payment modules can be integrated into a payment or credit transaction system. The user is presented with a login screen, where a username and password is accepted. Once the user has logged in, the user is placed into a loop where they can repeatedly make transactions until they logout. 
 
 The type of transaction is implemented using the Guice DI Framework. An administrator account can change the \verb|Transaction| class's implementation between a \verb|SecureTransaction|, \verb|FastTransaction|, and \verb|InsecureTransaction|. This implementation is then injected into the \verb|PaymentService|'s constructor via a Provider class, and is used to complete the transaction using different methods. 
 
+% MAYBE ADD MORE THINGS TO THE PROGRAM
+
+While the implementations of the application are fairly trivial, they highlight the capabilities and features of the framework.
+
 \section{Analysis of DI Frameworks}
+
+The use of DI Frameworks in code affects it in a multitude of ways, as the decoupling of classes leads in increased maintainability, extensibility, and reusability \cite{hongyulyangewantemperohaydenmelton2008,ekaterinarazinadavidjanzen2007}. 
+
+DI Frameworks assist in decoupling dependent objects from one another, which reduces the sensitivity to changes between different parts of the program. This allows the different parts of the program to be changed easily without needing to change other sections of code, increasing flexibility. A program or library which already has clients making use of its interface will not be required to change their own program should the implementation be loosely coupled. A side-effect of using the framework is that the code becomes highly dependent on the DI framework, which does limit possible development of the program. Should the framework not support a feature which is essential to an aspect of the program or expansion of the program, the entire application must be reprogrammed to accommodate a new framework.
+
+Since code which is implemented using a DI Framework is highly flexible, the code becomes highly reusable as the implementation can be modified to suit a specific need. The sample application in Section~\ref{sec:guice} which using DI to change the security level of a transaction can be modified to change the service provider from MasterCard to Visa or a cryptocurrency. 
+
+For many DI Frameworks, the lifetime of the injected objects is controlled by the parent object. This decreases the amount of unnecessary memory usage of the program.
+
+While DI Frameworks provide many benefits, there are drawbacks to using the frameworks. The frameworks each require a specific structure, be that XML files or additional POJO classes. These additional structures take time to learn and implement, increasing the development time of the project. Additionally, the dependencies need to be linked at runtime, which increases the running times of the program. Dagger 2, however, accomplishes all of its linking at compile time, and is significantly more efficient at runtime than other frameworks.
 
 
 \section{Conclusion}
