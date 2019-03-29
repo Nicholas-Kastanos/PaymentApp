@@ -12,9 +12,11 @@ public class TransactionProvider implements Provider<Transaction>{
         switch(type){
             case SECURE:
                 JOptionPane.showMessageDialog(null, "Secure Transaction Mode");
+                //System.out.println("Secure Transaction Mode");
                 return new SecureTransaction();
             case FAST:
                 JOptionPane.showMessageDialog(null, "Fast Transaction Mode");
+                //System.out.println("Fast Transaction Mode");
                 return new FastTransaction();
             case INSECURE:
                 JOptionPane.showMessageDialog(null, "Insecure Transaction Mode");

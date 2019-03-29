@@ -18,6 +18,9 @@ public class PaymentService {
 
     public static void changeTransactionType() {
         int selection = Integer.parseInt(JOptionPane.showInputDialog("Choose a Transaction Type:\n1) Secure;\n2) Fast;\n3) Insecure;\nEnter the number of your selection."));
+        /* System.out.println("Choose a Transaction Type:\\n1) Secure;\\n2) Fast;\\n3) Insecure;\\nEnter the number of your selection.");
+        int selection = 2;
+        System.out.println(selection); */
         while (selection < 1 || selection > 4) {
             JOptionPane.showMessageDialog(null, "Invalid selection.", "Error", JOptionPane.WARNING_MESSAGE);
             selection = Integer.parseInt(JOptionPane.showInputDialog("Choose a Transaction Type:\n1) Secure;\n2) Fast;\n3) Insecure;\nEnter the number of your selection:"));
@@ -30,6 +33,7 @@ public class PaymentService {
             case 2:
                 TransactionProvider.setTransactionType(TransactionType.FAST);
                 JOptionPane.showMessageDialog(null, "Set Transaction Type to FAST.");
+                //System.out.println("Set Transaction Type to FAST.");
                 break;
             case 3:
                 TransactionProvider.setTransactionType(TransactionType.INSECURE);
@@ -46,6 +50,13 @@ public class PaymentService {
         while (selection != 0) {
             do {
                 selection = Integer.parseInt(JOptionPane.showInputDialog("Choose an Option:\n0) Logout;\n1) Transaction;\nEnter the number of your selection."));
+                /* System.out.println("Choose an Option:\\n0) Logout;\\n1) Transaction;\\nEnter the number of your selection.");
+                if (selection == 2) {
+                    selection = 0;
+                } else {
+                    selection = 1;
+                }
+                System.out.println(selection); */
             } while (!(selection < 2 && selection >= 0));
             switch (selection) {
                 case 0:
@@ -57,7 +68,14 @@ public class PaymentService {
                     System.exit(1);
             }
             double amount = Double.parseDouble(JOptionPane.showInputDialog("Enter the amount to transfer (Use numbers only)."));
+            /* System.out.println("Enter the amount to transfer (Use numbers only).");
+            selection++;
+            double amount = 100;
+            System.out.println(amount); */
             String destination = JOptionPane.showInputDialog("Enter the destination of the transfer:");
+            /* System.out.println("Enter the destination of the transfer:");
+            String destination = "Destination Account";
+            System.out.println(destination); */
             this.makePayment(username, passwrd, amount, destination);
         }
     }
