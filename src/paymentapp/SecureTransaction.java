@@ -5,9 +5,6 @@ public class SecureTransaction implements Transaction {
     @Override
     public void makeTransaction(String username, String passwrd, double amount, String destination) {
         String check = amount + " is to be transfered to " + destination;
-        /* System.out.println(amount + " is to be transfered to " + destination + "\nPlease re-enter your password to continue.");
-        String check = "DriverPasswrd";
-        System.out.println(check); */
         System.out.println(check);
 
         StringBuilder sb = new StringBuilder();
@@ -15,7 +12,6 @@ public class SecureTransaction implements Transaction {
             sb.append((char) (check.charAt(i) + i));
         }
         System.out.println(sb);
-
         System.out.println("Transfer Successfully Encoded!");
 
     }
