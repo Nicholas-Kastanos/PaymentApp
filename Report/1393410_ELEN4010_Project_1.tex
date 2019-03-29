@@ -44,7 +44,7 @@
 	/Title (Analysis of Dependency Injection Frameworks in Java and their Features)
 	/Author (Nicholas Kastanos (1393410))
 	/CreationDate (D:201902211949)
-	/ModDate (D:201902211949)
+	/ModDate (D:201903281109)
 	/Subject (Software 3 Report)
 	/Keywords (dependency injection, java, framework)
 }
@@ -82,7 +82,7 @@ The origins of Dependency Injection are rooted in the concepts of the \textit{De
 
 % IoC --------------- R. E. Johnson and B. Foote. Designing reusable classes. Journal of Object-Oriented Programming, 1(2):22–35, 1988.
 
-These principles state that classes should not depend on other concrete classes, but should only depend on abstract interfaces. This allows the programmer to avoid what Martin describes as a ``Bad Design'', and avoids rigidity, frailty,and immobility in the code.
+These principles state that classes should not depend on other concrete classes, but should only depend on abstract interfaces. This allows the programmer to avoid what Martin describes as a ``Bad Design'', and avoids rigidity, frailty, and immobility in the code.
 
 By having classes depend on abstract interfaces, the implementation of the dependencies can be easily altered without needing the change the code of the class. This makes the code more flexible and less fragile, leading the easier future developments or changes. 
 
@@ -94,10 +94,10 @@ It is possible to implement DI using the standard libraries for many languages, 
 \section{DI Frameworks}\label{sec:dif}
 
 % Talk about frameworks in general, and then DI frameworks. How do they help implement DI and IoC effectively.
-DI frameworks are structured to encourage good use of the underlying principles \cite{rodjohnson2005,dennisdoomen2018}, and are designed to make the use of DI principles easy and simple. DI Frameworks in Java are usually implemented in two structures: XML configuration files, or Injector Java objects. Some of the more popular DI Frameworks are discussed below.
+DI frameworks are structured to encourage good use of the underlying principles \cite{rodjohnson2005,dennisdoomen2018}, and are designed to make the use of DI easy and simple. DI Frameworks in Java are usually implemented in two structures: XML configuration files, or Injector Java objects. Some of the more popular DI frameworks are discussed below.
 % Many Dependency Injection Frameworks are designed to make the implementation of IoC and DIP principles into a unified and simple
 
-Spring Framework is a comprehensive framework which provides more functionality than DI. It also supports features such as data binding, database connections, and web framework support. The DI Framework section of Spring makes use of both Plain Old Java Objects (POJO) anbd XML files to configure the bindings and injections \cite{spring2019}.
+Spring Framework is a comprehensive framework which provides more functionality than DI. It also supports features such as data binding, database connections, and web framework support. The DI framework section of Spring makes use of both Plain Old Java Objects (POJO) and XML files to configure the bindings and injections \cite{spring2019}.
 % https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/core.html#beans-factory-collaborators
 
 Guice is a lightweight DI Framework developed by Google to provide fast and simple DI using POJO principles. Unlike Spring Framework, Guice only provides DI capabilities \cite{guicewiki2014}.
@@ -114,7 +114,7 @@ Essential Features are central to implementing the DIP and IoC principles, and a
 
 \subsubsection{Constructor Injection} % Guice, Spring, Dagger
 
-Constructor Injection occurs when the object is injected into the constructor as an argument. This allows an object to be provided with the required dependency on construction without violating the DI Principle. Spring Framework, Guice and Dagger 2 all offer this form of injection \cite{guicewiki2014,spring2019,dagger2019}. 
+Constructor Injection occurs when the object is injected into the constructor as an argument. This allows an object to be provided with the required dependency on construction without violating the DIP. Spring Framework, Guice and Dagger 2 all offer this form of injection \cite{guicewiki2014,spring2019,dagger2019}. 
 
 \subsubsection{Method Injection} % Guice, Spring, Dagger 
 
@@ -128,16 +128,16 @@ Field Injection allows a dependency to be injected directly into an object's fie
 Default values allow dependency injection to become optional, where the dependency does not have to be created. If the injection does not occur, the program will be able to use a default value for the required dependency. This feature encourages reuse of code, and reduces fatal program errors, however it may increase the amount of logical errors which are present. All three of the frameworks mentioned above have this feature \cite{guicewiki2014,spring2019,dagger2019}.
 
 \subsubsection{Named Linkings} % Guice, Spring, Dagger
-This feature allows links between objects and their dependencies to be referred to by more 'human readable' names. This increases the readability of code, and does not afford extra functionality. While this does not provide the frameworks with more capabilities, Spring, Guice, and Dagger 2 all support this feature \cite{guicewiki2014,spring2019,dagger2019}.
+This feature allows links between objects and their dependencies to be referred to by more `human readable' names. This increases the readability of code, and does not afford extra functionality. While this does not provide the frameworks with more capabilities, Spring, Guice, and Dagger 2 all support this feature \cite{guicewiki2014,spring2019,dagger2019}.
 
 \subsubsection{Chained Dependencies} % Spring
 Chained dependencies occur when one object's dependency contains objects which itself is dependent on. While this is possible to implement using Guice and Dagger 2, Spring Framework provides active support for is feature \cite{spring2019}.
 
 \subsubsection{Provider Injections} % All
-Provider injections can be used when multiple values, or objects, need to be provided to an object. This ensures than a different instance of the dependency is provided each time. Spring Framework, Guice and Dagger 2 all offer this form of injection \cite{guicewiki2014,spring2019,dagger2019}. 
+Provider injections can be used when multiple values, or objects, need to be provided as a dependency. This ensures than a different instance of the dependency is provided each time. Spring Framework, Guice and Dagger 2 all offer this form of injection \cite{guicewiki2014,spring2019,dagger2019}. 
 
 \subsection{Essential Features}
-According to the guidelines set out in Section~\ref{sec:features}, Constructor Injection, Method Injection, and Provider Injection are Essential Features for a DI Framework.
+According to the guidelines set out at the beginning of Section~\ref{sec:features}, Constructor Injection, Method Injection, and Provider Injection are Essential Features for a DI Framework.
 
 Each of these methods of injection provide a framework for implementing the DIP and IoC Principles. Constructor Injection allows dependencies to be set up at the beginning of the object's lifetime, while Method Injection allows the dependencies to be created in the middle of the lifetime. 
 
@@ -145,7 +145,7 @@ Provider Injections are also essential due to the ability to inject large amount
 
 \subsection{Supplementary Features}
 
-The remaining features, Field and Optional Injection, Named Linkings and Chained Dependencies, can be classified as Supplementary Features. Field Injection can be implemented using Constructor or Method injection by passing a dependency into the objects as a parameter, and setting it to a private member. Optional Injections removes the need for a default injected object, which reduces the complexity of the code. Chained Dependencies can be complicated to program and test without the support of the framework. This may result in longer development times or lower product quality.
+The remaining features, Field and Optional Injection, Named Linkings and Chained Dependencies, can be classified as Supplementary Features. Field Injection can be implemented using Constructor or Method injection by passing a dependency into the objects as a parameter, and setting it to a private member. Optional Injections removes the need for a default injected object, which reduces the complexity of the code. Chained Dependencies can be complicated to program and test without the support of the framework, however it is possible to implement with good programming practice, but may result in longer development times or lower product quality.
 
 \section{Practical Implementation using Guice}\label{sec:guice}
 
@@ -162,18 +162,18 @@ While the implementations of the application are fairly trivial, they highlight 
 
 The use of DI Frameworks in code affects it in a multitude of ways, as the decoupling of classes leads in increased maintainability, extensibility, and reusability \cite{hongyulyangewantemperohaydenmelton2008,ekaterinarazinadavidjanzen2007}. 
 
-DI Frameworks assist in decoupling dependent objects from one another, which reduces the sensitivity to changes between different parts of the program. This allows the different parts of the program to be changed easily without needing to change other sections of code, increasing flexibility. A program or library which already has clients making use of its interface will not be required to change their own program should the implementation be loosely coupled. A side-effect of using the framework is that the code becomes highly dependent on the DI framework, which does limit possible development of the program. Should the framework not support a feature which is essential to an aspect of the program or expansion of the program, the entire application must be reprogrammed to accommodate a new framework.
+DI Frameworks assist in decoupling dependent objects from one another, which reduces the sensitivity to changes between different parts of the program. This allows the different parts of the program to be changed easily without needing to change other sections of code, increasing flexibility. A program or library which already has clients making use of its interface will not be required to change their own program should the implementation be changed. A side-effect of using the framework is that the code becomes highly dependent on the DI framework, which does limit possible development of the program. Should the framework not support a feature which is essential to an aspect of the program or expansion of the program, the entire application must be reprogrammed to accommodate a new framework.
 
-Since code which is implemented using a DI Framework is highly flexible, the code becomes highly reusable as the implementation can be modified to suit a specific need. The sample application in Section~\ref{sec:guice} which using DI to change the security level of a transaction can be modified to change the service provider from MasterCard to Visa or a cryptocurrency. 
+Since code which is implemented using a DI Framework is highly flexible, the code becomes highly reusable as the implementation can be modified to suit a specific need. The sample application in Section~\ref{sec:guice} which uses DI to change the security level of a transaction can be modified to change the service provider from MasterCard to Visa or a cryptocurrency. 
 
 For many DI Frameworks, the lifetime of the injected objects is controlled by the parent object. This decreases the amount of unnecessary memory usage of the program.
 
-While DI Frameworks provide many benefits, there are drawbacks to using the frameworks. The frameworks each require a specific structure, be that XML files or additional POJO classes. These additional structures take time to learn and implement, increasing the development time of the project. Additionally, the dependencies need to be linked at runtime, which increases the running times of the program. Dagger 2, however, accomplishes all of its linking at compile time, and is significantly more efficient at runtime than other frameworks.
+While DI Frameworks provide many benefits, there are drawbacks to using the frameworks. The frameworks each require a specific structure, be that XML files or additional POJO classes. These additional structures take time to learn and implement, increasing the development time of the project. Additionally, the dependencies need to be linked at runtime, which increases the running times of the program. Dagger 2, however, accomplishes all of its linking at compile time, and is significantly more efficient at runtime than other frameworks \cite{androiddeveloperguide}.
 
 
 \section{Conclusion}
 
-Dependency Injection Frameworks help implement the Dependency Inversion and Inversion of Control Principles, which aim to increase the flexibility and reusability of code. Spring Framework, Guice, and Dagger 2 are examined and their DI features are identified, and classified as either Essential or Supplementary features. 
+Dependency Injection Frameworks help implement the Dependency Inversion and Inversion of Control Principles, which aim to increase the flexibility and reusability of code. Spring Framework, Guice, and Dagger 2 are examined, their DI features are identified, and classified as either Essential or Supplementary features. 
 
 Constructor Injection, Method Injection, and Provider Injection are deemed as Essential features, while Field and Optional Injection, Named Linkings and Chained Dependencies are classified as Supplementary features.
 
