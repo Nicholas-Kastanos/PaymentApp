@@ -1,33 +1,30 @@
 package paymentapp;
 
 import com.google.inject.Provider;
-import javax.swing.JOptionPane;
 
-public class TransactionProvider implements Provider<Transaction>{
-    
+public class TransactionProvider implements Provider<Transaction> {
+
     private static TransactionType type = TransactionType.SECURE;
-    
+
     @Override
     public Transaction get() {
-        switch(type){
+        switch (type) {
             case SECURE:
-                JOptionPane.showMessageDialog(null, "Secure Transaction Mode");
-                //System.out.println("Secure Transaction Mode");
+                System.out.println("Secure Transaction Mode");
                 return new SecureTransaction();
             case FAST:
-                JOptionPane.showMessageDialog(null, "Fast Transaction Mode");
-                //System.out.println("Fast Transaction Mode");
+                System.out.println("Fast Transaction Mode");
                 return new FastTransaction();
             case INSECURE:
-                JOptionPane.showMessageDialog(null, "Insecure Transaction Mode");
+                System.out.println("Insecure Transaction Mode");
                 return new InsecureTransaction();
             default:
-                JOptionPane.showMessageDialog(null, "Invalid Selection. Using Secure Transactions", "Error", JOptionPane.WARNING_MESSAGE);
+                System.out.println("Invalid Selection. Using Secure Transactions");
                 return new SecureTransaction();
         }
     }
-    public static void setTransactionType(TransactionType type){
+
+    public static void setTransactionType(TransactionType type) {
         TransactionProvider.type = type;
     }
-    
 }

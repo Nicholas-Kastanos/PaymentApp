@@ -199,138 +199,56 @@ The following images are screenshots from the sample program developed in Java w
 
 \subsection{Changing Transaction Mode}
 
-The administrator can log into the system using the administrator credentials (see Figure~\ref{fig:admin}). Once the login has been successful, the administrator selects the desired security system, and is notified of this change (see Figure~\ref{fig:adminNotification}). The administrator is then logged out.
+The administrator can log into the system using the administrator credentials (see Figure~\ref{fig:admin}). Once the login has been successful, the administrator selects the desired security system, and is notified of this change. The administrator is then logged out.
 
-\begin{figure*}[h!]
+\begin{figure}[h!]
 	\centering
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/adminUser.PNG}
-		\caption{Input of Username for the Administrator user.}
-	\end{subfigure}%
-	~ 
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/adminPasswd.PNG}
-		\caption{Input of Password for the Administrator user.}
-	\end{subfigure}
-	\caption{Administrator Account.} \label{fig:admin}
-\end{figure*}
-\begin{figure*}[h!]
-	\centering
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/chooseMode.PNG}
-		\caption{Options screen to change the TransactionMode.}
-	\end{subfigure}%
-	~ 
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/changedMode.PNG}
-		\caption{Notification of successful change.}
-	\end{subfigure}
-	\caption{Changing the Transaction Mode.} \label{fig:adminNotification}
-\end{figure*}
+	\includegraphics[width=0.6\linewidth]{./Resources/cli-admin.jpg}
+	\caption{Administrator Options} \label{fig:admin}
+\end{figure}
 
 \subsection{Making a Transaction}
 
-A user may make a transaction with the currently selected transaction mode. The user logs in with their credentials, and is notified which transaction mode is in use on a successful login (see Figures~\ref{fig:userCreds}~to~\ref{fig:mode}). The user can choose to logout, or make a new transaction (see Figure~\ref{fig:menu}), and enters the amount and destination of the transfer as seen in Figure~\ref{fig:transfer}.
+A user may make a transaction with the currently selected transaction mode. The user logs in with their credentials (see Figure~\ref{fig:userCreds}), and is notified which transaction mode is in use on a successful login. The user can choose to logout, or make a new transaction (see Figure~\ref{fig:menu}), and enters the amount and destination of the transfer as seen in Figure~\ref{fig:transfer}.
 
-\begin{figure*}[h!]
+\begin{figure}[h!]
 	\centering
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/userUser.PNG}
-		\caption{User username.}
-	\end{subfigure}%
-	~ 
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/userPasswd.PNG}
-		\caption{User password.}
-	\end{subfigure}
+	\includegraphics[width=0.4\linewidth]{./Resources/cli-login.jpg}
 	\caption{User Login.} \label{fig:userCreds}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}[h!]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\linewidth]{./Resources/loginSuccess.PNG}
-	\caption{Successful Login.} \label{fig:loginSuccess}
-\end{figure*}
+	\includegraphics[width=0.4\linewidth]{./Resources/cli-loginSuccess.jpg}
+	\caption{Successful Login.} \label{fig:menu}
+\end{figure}
 
-\begin{figure*}[h!]
-	\centering
-	\begin{subfigure}[t]{0.32\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{./Resources/showSecureMode.PNG}
-		\caption{Secure Mode.}
-	\end{subfigure}%
-	~ 
-	\begin{subfigure}[t]{0.32\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{./Resources/showFastMode.PNG}
-		\caption{Fast Mode.}
-	\end{subfigure}
-	~ 
-	\begin{subfigure}[t]{0.32\textwidth}
-		\centering
-		\includegraphics[width=\linewidth]{./Resources/showInsecureMode.PNG}
-		\caption{Insecure Mode.}
-	\end{subfigure}
-	\caption{Display of Transfer mode.} \label{fig:mode}
-\end{figure*}
 
-\begin{figure*}[h!]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\linewidth]{./Resources/userMenu.PNG}
-	\caption{User Menu.} \label{fig:menu}
-\end{figure*}
-
-\begin{figure*}[h!]
-	\centering
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/amount.PNG}
-		\caption{Amount to be transferred.}
-	\end{subfigure}%
-	~ 
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/destination.PNG}
-		\caption{Destination of Transfer.}
-	\end{subfigure}
+	\includegraphics[width=0.4\linewidth]{./Resources/cli-details.jpg}
 	\caption{Transfer Details.} \label{fig:transfer}
-\end{figure*}
+\end{figure}
 
 \subsubsection{Secure Transaction Mode}
 
-If the system is in Secure Transaction mode, the user is prompted for their password again before the transaction is completed (Figure~\ref{fig:secure}).
+If the system is in Secure Transaction mode, the user's information is encrypted before the transaction is completed (Figure~\ref{fig:secure}).
 
-\begin{figure*}[h!]
+\begin{figure}[h!]
 	\centering
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/secureConfirm.PNG}
-		\caption{Confirmation of Details.}
-	\end{subfigure}%
-	~ 
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{./Resources/successSecure.PNG}
-		\caption{Notification of Secure Transfer complete.}
-	\end{subfigure}
+	\includegraphics[width=0.4\linewidth]{./Resources/cli-secure.jpg}
 	\caption{Secure Transfer.} \label{fig:secure}
-\end{figure*}
+\end{figure}
 
 \subsubsection{Fast Transaction Mode}
 
 If the system is in Fast Transaction mode, the transfer completes immediately (Figure~\ref{fig:fast}).
 
-\begin{figure*}[h!]
+\begin{figure}[h!]
 	\centering
-	\includegraphics[width=0.4\linewidth]{./Resources/successFast.PNG}
+	\includegraphics[width=0.4\linewidth]{./Resources/cli-fast.jpg}
 	\caption{Fast Transfer} \label{fig:fast}
-\end{figure*}
+\end{figure}
 
 \subsubsection{Insecure Transaction Mode}
 
@@ -338,7 +256,7 @@ If the system is in Insecure Transaction mode, the transfer is `hijacked' and Fi
 
 \begin{figure*}[h!]
 	\centering
-	\includegraphics[width=0.4\linewidth]{./Resources/successInsecure.PNG}
+	\includegraphics[width=0.4\linewidth]{./Resources/cli-bad.jpg}
 	\caption{Insecure Transfer} \label{fig:insecure}
 \end{figure*}
 
